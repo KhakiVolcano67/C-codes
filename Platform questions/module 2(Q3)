@@ -1,0 +1,30 @@
+// Grading Students 
+// https://www.hackerrank.com/challenges/grading/problem
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int grades[n];
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &grades[i]);
+    }
+
+    for (int i = 0; i < n; i++) {
+
+        if (grades[i] >= 38) {
+            int next = ((grades[i] / 5) + 1) * 5;
+
+            if (next - grades[i] < 3) {
+                grades[i] = next;
+            }
+        }
+
+        printf("%d\n", grades[i]);
+    }
+
+    return 0;
+}
